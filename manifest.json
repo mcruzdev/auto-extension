@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "version": "0.0.1",
+    "name": "Auto-extension",
+    "description": "Automatize a comunicação com o DETRAN do seu estado",
+    "author": "Matheus Cruz (mcruzdev), Oiceotse Moura",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [],
+    "action": {
+        "default_popup": "index.html"
+    }
+}

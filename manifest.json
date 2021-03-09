@@ -1,14 +1,17 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 2,
     "version": "0.0.1",
     "name": "Auto-extension",
     "description": "Automatize a comunicação com o DETRAN do seu estado",
     "author": "Matheus Cruz (mcruzdev), Oiceotse Moura",
-    "background": {
-        "service_worker": "background.js"
-    },
     "permissions": [],
-    "action": {
-        "default_popup": "index.html"
-    }
+    "browser_action": {
+        "default_popup": "modules/main/index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.detran.pe.gov.br/primeira-habilitacao"],
+            "js": ["./modules/background/background.js"]
+        }
+    ]
 }

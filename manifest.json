@@ -1,17 +1,28 @@
 {
     "manifest_version": 2,
     "version": "0.0.1",
-    "name": "Extensão do vitor",
-    "description": "Automatize a comunicação com o DETRAN do seu estado",
-    "author": "Matheus Cruz (mcruzdev), Oiceotse Moura",
-    "permissions": ["webRequest"],
+    "name": "Auto-extension",
+    "description": "Extensão que automatiza o pré-cadastro no DETRAN-PE",
+    "author": "Oiceotse Moura, Matheus Cruz",
+    "permissions": [
+        "webRequest"
+    ],
     "browser_action": {
         "default_popup": "modules/main/index.html"
     },
+    "icons": {
+        "16": "img/icon.png",
+        "48": "img/icon.png",
+        "128": "img/icon.png"
+    },
     "content_scripts": [
         {
-            "matches": ["https://www.detran.pe.gov.br/primeira-habilitacao"],
-            "js": ["./modules/background/background.js"]
+            "matches": [
+                "https://www.detran.pe.gov.br/primeira-habilitacao"
+            ],
+            "js": [
+                "./modules/background/background.js"
+            ]
         }
     ]
 }

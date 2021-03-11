@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "version": "0.0.1",
     "name": "Auto-extension",
-    "description": "Extensão que automatiza o pré-cadastro no DETRAN-PE",
+    "description": "Extensão que automatiza os formulários de pré-cadastro e agendamentos para primeira habilitação no DETRAN-PE",
     "author": "Oiceotse Moura, Matheus Cruz",
     "permissions": [
         "webRequest"

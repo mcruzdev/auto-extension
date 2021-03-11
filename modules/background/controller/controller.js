@@ -2,7 +2,7 @@ export default class Controller {
   constructor() {}
 
   get() {
-    document.getElementById("txtCpf").value = "13330422726";
+    document.getElementById("txtCpf").value = "294627176";
     console.log("por cpf");
   }
 }

@@ -3,15 +3,28 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.input{
+    border-radius: 5px;
+    border-color: #cddfe9;
+    width: auto;
+    height: 20px;
+    border-width: 1px;
+    margin-top: 10px;
 }
 
 .btn-auto-extension {
-    background-color: #4CAF50; /* Green */
+    margin-top: 17px;
+    background-color: #2188dd;
+    border-radius: 10px;
     border: none;
-    color: #d2d2d2;
-    padding: 15px 32px;
+    color: #FFF;
+    padding: 10px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
   }

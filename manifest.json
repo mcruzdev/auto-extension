@@ -1,10 +1,10 @@
 {
     "manifest_version": 2,
     "version": "0.0.1",
-    "name": "Auto-extension",
+    "name": "Extensão do vitor",
     "description": "Automatize a comunicação com o DETRAN do seu estado",
     "author": "Matheus Cruz (mcruzdev), Oiceotse Moura",
-    "permissions": [],
+    "permissions": ["webRequest"],
     "browser_action": {
         "default_popup": "modules/main/index.html"
     },

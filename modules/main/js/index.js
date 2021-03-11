@@ -3,6 +3,7 @@ const api = {
     return await fetch("http://localhost:3000/api/v1/pe", {
       headers: {
         "Content-Type": "application/json",
+        Accept: "*/*",
       },
       method: "POST",
       body: JSON.stringify({ cpf }),
@@ -11,15 +12,14 @@ const api = {
 };
 
 const cadastrar = (cpf) => {
-  api.submitCpf(cpf).then((res) => {
+  api.submitCpf(cpf).then(async (res) => {
     if (res.ok) {
-     const json = await res.json() 
-     alert(`Status from auto-robot api: ${json.ok}`);
+      const json = await res.json();
+      alert(`Status from auto-robot api: ${json.ok}`);
     } else {
-      alert(`Failed Status: ${res.status}`);
+      alert(`Failed Status: `);
     }
   });
-
 };
 
 const getCpfValueFromInput = () => {
@@ -37,4 +37,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   registerButtonElement.addEventListener("click", () => cadastrar(cpf));
 });
-

@@ -1,23 +1,40 @@
+const api = {
+  submitCpf: async (cpf) => {
+    return await fetch("http://localhost:3000/api/v1/pe", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ cpf }),
+    });
+  },
+};
+
+const cadastrar = (cpf) => {
+  api.submitCpf(cpf).then((res) => {
+    if (res.ok) {
+     const json = await res.json() 
+     alert(`Status from auto-robot api: ${json.ok}`);
+    } else {
+      alert(`Failed Status: ${res.status}`);
+    }
+  });
+
+};
+
+const getCpfValueFromInput = () => {
+  const cpf = document.getElementById("cpf").value;
+  return cpf;
+};
+
+const getRegisterButtonElement = () => {
+  return document.getElementById("registerButton");
+};
+
 document.addEventListener("DOMContentLoaded", function () {
-  const button = document.getElementById("registerButton");
-  button.addEventListener("click", onRegisterClick);
+  const cpf = getCpfValueFromInput();
+  const registerButtonElement = getRegisterButtonElement();
+
+  registerButtonElement.addEventListener("click", () => cadastrar(cpf));
 });
 
-const onRegisterClick = function () {
-  const cpf = document.getElementById("cpf");
-
-  fetch("http://localhost:3000/api/v1/pe", {
-    body: JSON.stringify({ cpf: cpf.value }),
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      alert(`Status from auto-robot api: ${json.ok}`);
-    });
-};

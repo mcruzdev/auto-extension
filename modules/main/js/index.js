@@ -16,8 +16,12 @@ const cadastrar = (cpf) => {
     if (res.ok) {
       const json = await res.json();
       alert(`Status from auto-robot api: ${json.ok}`);
+      enableRegisterInputs();
+      hideLoadingSpin();
     } else {
       alert(`Failed Status: `);
+      enableRegisterInputs();
+      hideLoadingSpin();
     }
   });
 };
@@ -36,6 +40,20 @@ const showLoadingSpin = () => {
   const cadastrarElement = document.getElementById("registerButton");
   spinElement.style.display = "flex";
   cadastrarElement.style.display = "none";
+};
+
+const hideLoadingSpin = () => {
+  const spinElement = document.getElementById("spin");
+  const cadastrarElement = document.getElementById("registerButton");
+  spinElement.style.display = "none";
+  cadastrarElement.style.display = "flex";
+};
+
+const enableRegisterInputs = () => {
+  const cpfInputElement = document.getElementById("cpf");
+  const dateOfBirthInputElement = document.getElementById("dateOfBirth");
+  cpfInputElement.disabled = "false";
+  dateOfBirthInputElement.disabled = "false";
 };
 
 const disableRegisterInputs = () => {

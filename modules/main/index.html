@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +7,45 @@
     <script  src="js/index.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Auto-extension</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+      </style>
 </head>
-
 <body>
     <div class="container-line">
-        <div style="margin-right: 10px;">
-            <span style="color: #2188dd; font-size: 20px; font-weight: bold;">CPF:</span>
-            <input id="cpf" class="input"  type="text" />
+        <div class="container-img" >
+            <img width="400px" height="auto" src="../../img/novo-fundo.jpg" >
         </div>
-        <div style="margin-right: 30px;">
-            <span style="color: #2188dd; font-size: 20px; font-weight: bold;">Data Nascimento:</span>
-            <input id="dateOfBirth" class="input" type="text" />
+        <div class="container-form">
+            <div>
+                <span style="color: #686868; font-size: 30px; font-weight: 500;">Cadastrar aluno</span>
+            </div>
+            <div style="margin-top:50px ;">
+                <div style="margin-bottom: 75px; display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;">
+                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/novo.png" >
+                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">CPF:</span>
+                    </div>
+                    <input id="cpf" class="input"  type="text" />
+                </div>
+                <div style="margin-bottom: 50px; display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;">
+                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/novo.png" >
+                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">Data nascimento:</span>
+                    </div>
+                    <input id="dateOfBirth" class="input"  type="text" />
+                </div>
+            </div>
+            <button id="registerButton" class="btn-auto-extension">Cadastrar</button>
+            <div id="spin" style="display: none; align-items:center ; justify-content: center;"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+            
         </div>
-         
-         <button id="registerButton" class="btn-auto-extension">Cadastrar</button>
     </div>
+        
     
 </body>
 

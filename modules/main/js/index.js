@@ -31,9 +31,27 @@ const getRegisterButtonElement = () => {
   return document.getElementById("registerButton");
 };
 
+const showLoadingSpin = () => {
+  const spinElement = document.getElementById("spin");
+  const cadastrarElement = document.getElementById("registerButton");
+  spinElement.style.display = "flex";
+  cadastrarElement.style.display = "none";
+};
+
+const disableRegisterInputs = () => {
+  const cpfInputElement = document.getElementById("cpf");
+  const dateOfBirthInputElement = document.getElementById("dateOfBirth");
+  cpfInputElement.disabled = "true";
+  dateOfBirthInputElement.disabled = "true";
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   const cpf = getCpfValueFromInput();
   const registerButtonElement = getRegisterButtonElement();
 
-  registerButtonElement.addEventListener("click", () => cadastrar(cpf));
+  registerButtonElement.addEventListener("click", () => {
+    cadastrar(cpf);
+    showLoadingSpin();
+    disableRegisterInputs();
+  });
 });

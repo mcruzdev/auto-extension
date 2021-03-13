@@ -31,10 +31,11 @@
 .input{
     width: auto; 
     height: 25px;
-    /* border-bottom-width: 1px; */
     margin-top: 10px;
     border-width: 0px;
     border-bottom-width: 1px;
+    color: gray;
+    font-size: 18px;
     outline: 0;
     background-color: '#fafafa';
     background: #fafafa;

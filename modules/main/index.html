@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script  src="js/index.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jqueryMaskPlugin/src/jquery.mask.js"></script>
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
     <title>Auto-extension</title>
     <style>
@@ -26,18 +28,20 @@
             </div>
             <div style="margin-top:50px ;">
                 <div style="margin-bottom: 75px; display: flex; flex-direction: column;">
-                    <div style="display: flex; flex-direction: row;">
-                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/novo.png" >
-                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">CPF:</span>
+                    <div style="display: flex; flex-direction: row;  align-items: center;">
+                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/icon-user.png" >
+                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500 ">CPF:</span>
                     </div>
-                    <input id="cpf" class="input"  type="text" />
+                    <input id="cpf" class="input" data-mask="000.000.000-00" data-mask-selectonfocus="true" type="text" />
+                    <span style="margin-top:5px; font-size: 18px; color: #0b86d6; font-weight: bold; display: none;" id="cpfError">Cpf Inválido</span>
                 </div>
                 <div style="margin-bottom: 50px; display: flex; flex-direction: column;">
-                    <div style="display: flex; flex-direction: row;">
-                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/novo.png" >
-                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">Data nascimento:</span>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <img style="margin-right:10px, " width="32px" height="auto" src="../../img/icon-lock.png" >
+                        <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">Senha de acesso:</span>
                     </div>
-                    <input id="dateOfBirth" class="input"  type="text" />
+                    <input id="password" class="input"  type="password" />
+                    <span style="margin-top:5px; font-size: 18px; color: #0b86d6; font-weight: bold; display: none;" id="passwordError">Senha Inválida</span>
                 </div>
             </div>
             <button id="registerButton" class="btn-auto-extension">Cadastrar</button>

@@ -11,9 +11,9 @@
         "default_popup": "modules/main/index.html"
     },
     "icons": {
-        "16": "img/icon.png",
-        "48": "img/icon.png",
-        "128": "img/icon.png"
+        "16": "img/logo-ae-digitals-with-background.png",
+        "48": "img/logo-ae-digitals-with-background.png",
+        "128": "img/logo-ae-digitals-with-background.png"
     },
     "content_scripts": [
         {

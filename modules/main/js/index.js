@@ -160,5 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     cpfElement.value = "";
     const passwordElement = document.getElementById("password");
     passwordElement.value = "";
+    enableRegisterInputs();
   });
 });

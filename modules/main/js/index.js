@@ -48,9 +48,9 @@ const cadastrar = (cpf) => {
   api.submitCpf(cpf).then(async (res) => {
     if (res.ok) {
       const json = await res.json();
-      alert(`Status from auto-robot api: ${json.ok}`);
       enableRegisterInputs();
       hideLoadingSpin();
+      showRegisterSuccess();
     } else {
       alert(`Failed Status: `);
       enableRegisterInputs();
@@ -73,6 +73,10 @@ const getRegisterButtonElement = () => {
   return document.getElementById("registerButton");
 };
 
+const getNewRegisterButtonElement = () => {
+  return document.getElementById("newRegister");
+};
+
 const showLoadingSpin = () => {
   const spinElement = document.getElementById("spin");
   const cadastrarElement = document.getElementById("registerButton");
@@ -89,9 +93,9 @@ const hideLoadingSpin = () => {
 
 const enableRegisterInputs = () => {
   const cpfInputElement = document.getElementById("cpf");
-  const dateOfBirthInputElement = document.getElementById("dateOfBirth");
+  const passwordInputElement = document.getElementById("password");
   cpfInputElement.disabled = "false";
-  dateOfBirthInputElement.disabled = "false";
+  passwordInputElement.disabled = "false";
 };
 
 const disableRegisterInputs = () => {
@@ -117,13 +121,22 @@ const hideCpfError = () => {
   document.getElementById("cpfError").style.display = "none";
 };
 
+const showRegisterSuccess = () => {
+  document.getElementById("registerSuccess").style.display = "flex";
+  document.getElementById("mainForm").style.display = "none";
+};
+
+const hideRegisterSuccess = () => {
+  document.getElementById("registerSuccess").style.display = "none";
+  document.getElementById("mainForm").style.display = "flex";
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   jQuery(function ($) {
     $("#cpf").mask("999.999.999-99");
   });
 
   const registerButtonElement = getRegisterButtonElement();
-
   registerButtonElement.addEventListener("click", () => {
     const cpf = getCpfValueFromInput();
     const password = getPasswordValueFromInput();
@@ -138,5 +151,14 @@ document.addEventListener("DOMContentLoaded", function () {
     showLoadingSpin();
     disableRegisterInputs();
     cadastrar(cpfRaw(cpf));
+  });
+
+  const newRegisterButtonElement = getNewRegisterButtonElement();
+  newRegisterButtonElement.addEventListener("click", () => {
+    hideRegisterSuccess();
+    const cpfElement = document.getElementById("cpf");
+    cpfElement.value = "";
+    const passwordElement = document.getElementById("password");
+    passwordElement.value = "";
   });
 });

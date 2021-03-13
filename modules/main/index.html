@@ -18,11 +18,22 @@
       </style>
 </head>
 <body>
+    
     <div class="container-line">
         <div class="container-img" >
-            <img width="400px" height="auto" src="../../img/novo-fundo.jpg" >
+            <img width="400px" height="auto" src="../../img/banner-ae-digitals.jpg" >
         </div>
-        <div class="container-form">
+        <div id="registerSuccess" style="display: none; justify-content: space-around; align-items: center; flex:1; flex-direction: column;" >
+            <div>
+                <span style="font-size: 25px; color: #0b86d6; ">
+                    Cadastro realizado com sucesso
+                </span>
+            </div>
+            <div>
+                <button id="newRegister" class="btn-auto-extension">Novo cadastro</button>
+            </div>
+        </div>
+        <div id="mainForm" class="container-form">
             <div>
                 <span style="color: #686868; font-size: 30px; font-weight: 500;">Cadastrar aluno</span>
             </div>
@@ -44,8 +55,11 @@
                     <span style="margin-top:5px; font-size: 18px; color: #0b86d6; font-weight: bold; display: none;" id="passwordError">Senha Inválida</span>
                 </div>
             </div>
-            <button id="registerButton" class="btn-auto-extension">Cadastrar</button>
-            <div id="spin" style="display: none; align-items:center ; justify-content: center;"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+            <button id="registerButton" class="btn-auto-extension"><span>Cadastrar</span></button>
+            <div>
+                <div id="spin" style="display: none; align-items:center ; justify-content: center;"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+            </div>
+            
             
         </div>
     </div>

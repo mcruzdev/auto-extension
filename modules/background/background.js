@@ -17,7 +17,7 @@ const api = {
         Accept: "*/*",
       },
       method: "POST",
-      body: JSON.stringify({ cpf, rg: "" }),
+      body: JSON.stringify({ cpf, rg: "264133341" }),
     });
   },
 };
@@ -26,13 +26,18 @@ const postCpf = (cpf) => {
   api.submitCpf(cpf).then(async (res) => {
     if (res.ok) {
       const notificationParams = {
-        title: "Mateus só faz gambiarra",
-        message: "Oiceotse god of proramming",
+        title: "AE Digitals",
+        message: "Seu cadastro foi realizado com sucesso",
+      };
+      alert(notificationParams.message);
+      showNotification(notificationParams);
+    } else {
+      const notificationParams = {
+        title: "AE Digitals",
+        message: "Não foi possível realizar seu cadastro, tente novamente :(",
       };
       showNotification(notificationParams);
-      const json = await res.json();
-    } else {
-      alert(`Failed Status: `);
+      alert(notificationParams.message);
       enableRegisterInputs();
       hideLoadingSpin();
     }

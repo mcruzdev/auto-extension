@@ -42,6 +42,7 @@
 }
 
 .btn-auto-extension {
+    width: 100%;
     margin-top: 30px;
     background-color: #2188dd;
     border-radius: 10px;

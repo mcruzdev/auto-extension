@@ -5,10 +5,18 @@
     "description": "Extensão que automatiza os formulários de pré-cadastro e agendamentos para primeira habilitação no DETRAN-PE",
     "author": "Oiceotse Moura, Matheus Cruz",
     "permissions": [
-        "webRequest"
+        "webRequest",
+        "notifications"
     ],
     "browser_action": {
         "default_popup": "modules/main/index.html"
+    },
+    "background": 
+    {
+        "scripts": [
+            "./modules/background/background.js",
+            "./lib/socket.io.js"
+        ]
     },
     "icons": {
         "16": "img/logo-ae-digitals-with-background.png",
@@ -21,8 +29,9 @@
                 "https://www.detran.pe.gov.br/primeira-habilitacao"
             ],
             "js": [
-                "./modules/background/background.js"
+                "./modules/content/content.js"
             ]
         }
     ]
+    
 }

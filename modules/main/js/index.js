@@ -1,16 +1,3 @@
-const api = {
-  submitCpf: async (cpf) => {
-    return await fetch("http://localhost:3000/api/v1/pe", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-      },
-      method: "POST",
-      body: JSON.stringify({ cpf }),
-    });
-  },
-};
-
 const cpfValidator = (cpf) => {
   const strCPF = cpfRaw(cpf);
   var Soma;
@@ -45,18 +32,19 @@ const cpfRaw = (cpf) => {
 };
 
 const cadastrar = (cpf) => {
-  api.submitCpf(cpf).then(async (res) => {
-    if (res.ok) {
-      const json = await res.json();
-      enableRegisterInputs();
-      hideLoadingSpin();
-      showRegisterSuccess();
-    } else {
-      alert(`Failed Status: `);
-      enableRegisterInputs();
-      hideLoadingSpin();
-    }
-  });
+  chrome.runtime.sendMessage(cpf);
+  setTimeout(() => {
+    enableRegisterInputs();
+    hideLoadingSpin();
+    showRegisterSuccess();
+  }, 2000);
+  // chrome.runtime.onMessage.addListener((res)=>{
+  //   if(res.ok){
+  //
+  //   } else {
+
+  //   }
+  // });
 };
 
 const getCpfValueFromInput = () => {
@@ -94,8 +82,8 @@ const hideLoadingSpin = () => {
 const enableRegisterInputs = () => {
   const cpfInputElement = document.getElementById("cpf");
   const passwordInputElement = document.getElementById("password");
-  cpfInputElement.disabled = "false";
-  passwordInputElement.disabled = "false";
+  cpfInputElement.removeAttribute("disabled");
+  passwordInputElement.removeAttribute("disabled");
 };
 
 const disableRegisterInputs = () => {
@@ -127,8 +115,11 @@ const showRegisterSuccess = () => {
 };
 
 const hideRegisterSuccess = () => {
-  document.getElementById("registerSuccess").style.display = "none";
-  document.getElementById("mainForm").style.display = "flex";
+  return new Promise((resolve, reject) => {
+    document.getElementById("registerSuccess").style.display = "none";
+    document.getElementById("mainForm").style.display = "flex";
+    resolve(true);
+  });
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -154,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const newRegisterButtonElement = getNewRegisterButtonElement();
-  newRegisterButtonElement.addEventListener("click", () => {
-    hideRegisterSuccess();
+  newRegisterButtonElement.addEventListener("click", async () => {
+    await hideRegisterSuccess();
     const cpfElement = document.getElementById("cpf");
     cpfElement.value = "";
     const passwordElement = document.getElementById("password");

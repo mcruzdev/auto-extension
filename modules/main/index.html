@@ -23,11 +23,19 @@
         <div class="container-img" >
             <img width="400px" height="auto" src="../../img/banner-ae-digitals.jpg" >
         </div>
-        <div id="registerSuccess" style="display: none; justify-content: space-around; align-items: center; flex:1; flex-direction: column;" >
+        <div id="registerSuccess" style="display: none; justify-content: space-around; align-items: center; flex:1; flex-direction: column; padding: 20px;" >
             <div>
-                <span style="font-size: 25px; color: #0b86d6; ">
-                    Cadastro realizado com sucesso
-                </span>
+                <div style="margin-bottom: 40px; text-align: center;">
+                    <span style="font-size: 23px; color: #0b86d6; margin-bottom: 40px; text-align: center; ">
+                        Cadastro enviado para finalização
+                    </span>
+                </div>
+                <div style="text-align: center;">
+                    <span style="font-size: 23px; color: #b3b3b3;text-align: center; ">
+                        Em breve você receberá uma notificação de finalização do cadastro
+                     </span>
+                </div>
+               
             </div>
             <div>
                 <button id="newRegister" class="btn-auto-extension">Novo cadastro</button>
@@ -55,7 +63,9 @@
                     <span style="margin-top:5px; font-size: 18px; color: #0b86d6; font-weight: bold; display: none;" id="passwordError">Senha Inválida</span>
                 </div>
             </div>
-            <button id="registerButton" class="btn-auto-extension"><span>Cadastrar</span></button>
+            <div style="width: 100%;">
+                <button id="registerButton" class="btn-auto-extension">Cadastrar</button>
+            </div>
             <div>
                 <div id="spin" style="display: none; align-items:center ; justify-content: center;"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
             </div>

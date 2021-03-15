@@ -38,13 +38,6 @@ const cadastrar = (cpf) => {
     hideLoadingSpin();
     showRegisterSuccess();
   }, 2000);
-  // chrome.runtime.onMessage.addListener((res)=>{
-  //   if(res.ok){
-  //
-  //   } else {
-
-  //   }
-  // });
 };
 
 const getCpfValueFromInput = () => {

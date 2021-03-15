@@ -11,13 +11,13 @@ const showNotification = (params) => {
 
 const api = {
   submitCpf: async (cpf) => {
-    return await fetch("http://localhost:3000/api/v1/pe", {
+    return await fetch("http://18.229.118.15:8080/api/v1/pe", {
       headers: {
         "Content-Type": "application/json",
         Accept: "*/*",
       },
       method: "POST",
-      body: JSON.stringify({ cpf, rg: "280500348" }),
+      body: JSON.stringify({ cpf, rg: "428099427" }),
     });
   },
 };

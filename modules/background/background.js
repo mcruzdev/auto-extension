@@ -6,18 +6,20 @@ const showNotification = (params) => {
     ),
     title: params.title,
     message: params.message,
+    requireInteraction: true,
+    priority: 2,
   });
 };
 
 const api = {
   submitCpf: async (cpf) => {
-    return await fetch("http://18.229.118.15:8080/api/v1/pe", {
+    return await fetch("http://localhost:8080/api/v1/pe", {
       headers: {
         "Content-Type": "application/json",
         Accept: "*/*",
       },
       method: "POST",
-      body: JSON.stringify({ cpf, rg: "428099427" }),
+      body: JSON.stringify({ cpf, rg: "436595898" }),
     });
   },
 };
@@ -42,4 +44,4 @@ const postCpf = (cpf) => {
   });
 };
 
-chrome.runtime.onMessage.addListener(postCpf);
+chrome.runtime.onMessage.addListener((cpf) => postCpf(cpf));

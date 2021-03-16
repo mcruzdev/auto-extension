@@ -13,13 +13,13 @@ const showNotification = (params) => {
 
 const api = {
   submitCpf: async (cpf) => {
-    return await fetch("http://localhost:8080/api/v1/pe", {
+    return await fetch("http://ec2-18-228-118-253.sa-east-1.compute.amazonaws.com:8080/api/v1/pe", {
       headers: {
         "Content-Type": "application/json",
         Accept: "*/*",
       },
       method: "POST",
-      body: JSON.stringify({ cpf, rg: "436595898" }),
+      body: JSON.stringify({cpf}),
     });
   },
 };
@@ -44,4 +44,6 @@ const postCpf = (cpf) => {
   });
 };
 
-chrome.runtime.onMessage.addListener((cpf) => postCpf(cpf));
+chrome.runtime.onMessage.addListener((cpf) => {
+  postCpf(cpf)
+});

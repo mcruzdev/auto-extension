@@ -14,7 +14,7 @@ const showNotification = (params) => {
 const api = {
   submitCpf: async (cpf) => {
     return await fetch(
-      "http://ec2-18-228-118-253.sa-east-1.compute.amazonaws.com:8080/api/v1/pe",
+      "http://ec2-18-230-70-21.sa-east-1.compute.amazonaws.com:8080/api/v1/pe",
       {
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "version": "0.0.1",
     "name": "Ae-Digitals",
-    "description": "Extensão que automatiza os formulários de pré-cadastro e agendamentos para primeira habilitação no DETRAN-PE",
+    "description": "Extensão que automatiza os formulários de pré-cadastro e agendamentos para primeira habilitação no DETRAN",
     "author": "Oiceotse Moura, Matheus Cruz",
     "permissions": [
         "webRequest",

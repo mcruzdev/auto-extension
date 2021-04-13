@@ -12,7 +12,7 @@ const showNotification = (params) => {
 };
 
 const api = {
-  submitCpf: async (cpf) => {
+  submitCpf: async (cpf, region) => {
     return await fetch(
       "http://ec2-18-230-70-21.sa-east-1.compute.amazonaws.com:8080/api/v1/pe",
       {
@@ -21,7 +21,7 @@ const api = {
           Accept: "*/*",
         },
         method: "POST",
-        body: JSON.stringify({ cpf }),
+        body: JSON.stringify({ cpf, region }),
       }
     );
   },

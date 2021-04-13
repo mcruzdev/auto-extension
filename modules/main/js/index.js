@@ -26,6 +26,10 @@ const passwordValidator = (password) => {
   return password == "aedigitals" ? true : false;
 };
 
+const regionValidator = (region) => {
+  return region ? true : false;
+};
+
 const cpfRaw = (cpf) => {
   const strCPF = cpf.replace(/\D/g, "");
   return strCPF;
@@ -48,6 +52,11 @@ const getCpfValueFromInput = () => {
 const getPasswordValueFromInput = () => {
   const password = document.getElementById("password").value;
   return password;
+};
+
+const getRegionValueFromInput = () => {
+  var regionChoosed = document.getElementById("regions").value;
+  return regionChoosed;
 };
 
 const getRegisterButtonElement = () => {
@@ -124,8 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
   registerButtonElement.addEventListener("click", () => {
     const cpf = getCpfValueFromInput();
     const password = getPasswordValueFromInput();
+    var regionChoosed = getRegionValueFromInput();
     const isCpfValid = cpfValidator(cpf);
     const isPasswordValid = passwordValidator(password);
+    const isRegionValid = regionValidator(regionChoosed);
 
     if (!isCpfValid) return showCpfError();
     hideCpfError();

@@ -46,7 +46,7 @@
                 <span style="color: #686868; font-size: 30px; font-weight: 500;">Cadastrar aluno</span>
             </div>
             <div style="margin-top:50px ;">
-                <div style="margin-bottom: 75px; display: flex; flex-direction: column;">
+                <div style="margin-bottom: 30px; display: flex; flex-direction: column;">
                     <div style="display: flex; flex-direction: row;  align-items: center;">
                         <img style="margin-right:10px, " width="30px" height="auto" src="../../img/icon-user.png" >
                         <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500 ">CPF:</span>
@@ -54,7 +54,19 @@
                     <input id="cpf" class="input" data-mask="000.000.000-00" data-mask-selectonfocus="true" type="text" />
                     <span style="margin-top:5px; font-size: 18px; color: #0b86d6; font-weight: bold; display: none;" id="cpfError">Cpf Inválido</span>
                 </div>
-                <div style="margin-bottom: 50px; display: flex; flex-direction: column;">
+                <div style="margin-bottom: 30px; display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: row;  align-items: center;">
+                        <img style="margin-right:10px, " width="30px" height="auto" src="../../img/icon-user.png" >
+                        <span for="cars" style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500 ">Seleciona sua região:</span>
+                    </div>
+                    
+                    <select class="input" id="regions">
+                    <option value=""></option>
+                    <option value="rn">Rio Grande do Norte</option>
+                    <option value="pe">Pernambuco</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 30px; display: flex; flex-direction: column;">
                     <div style="display: flex; flex-direction: row; align-items: center;">
                         <img style="margin-right:10px, " width="32px" height="auto" src="../../img/icon-lock.png" >
                         <span style=" margin-left: 30px; color: #b3b3b3; font-size: 20px; font-weight: 500">Senha de acesso:</span>
